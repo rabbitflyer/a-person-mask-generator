@@ -21,6 +21,7 @@ MASK_OPTION_1_HAIR = 'hair'
 MASK_OPTION_2_BODY = 'body (skin)'
 MASK_OPTION_3_FACE = 'face (skin)'
 MASK_OPTION_4_CLOTHES = 'clothes'
+MASK_OPTION_5_ACCESSORIES = 'accessories'
 
 title = "A Person Mask Generator"
 
@@ -90,6 +91,8 @@ class Script(scripts.Script):
                         mask_index = 3
                     if target == MASK_OPTION_4_CLOTHES:
                         mask_index = 4
+                    if target == MASK_OPTION_5_ACCESSORIES:
+                        mask_index = 5
 
                     masks.append(segmented_masks.confidence_masks[mask_index])
 
@@ -154,6 +157,7 @@ class Script(scripts.Script):
                                     MASK_OPTION_2_BODY,
                                     MASK_OPTION_3_FACE,
                                     MASK_OPTION_4_CLOTHES,
+                                    MASK_OPTION_5_ACCESSORIES,
                                 ],
                                 value=[MASK_OPTION_3_FACE],
                                 elem_id="a_person_mask_generator_mask_dropdown",
